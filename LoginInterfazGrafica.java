@@ -94,6 +94,46 @@ class MiInterfazGrafica extends JFrame {
 
         JButton saveButton = new JButton("Guardar");
         saveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Guardar datos");
+            }
+        });
+
+        JPanel savePanel = new JPanel();
+        savePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        savePanel.add(saveButton);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(opcionesComboBox))
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(imagenLabel))
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(checkBox)
+                                .addComponent(commentLabel)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(textField)
+                        )
+                        .addComponent(savePanel, GroupLayout.Alignment.CENTER)
+        );
+
+        layout.setVerticalGroup(
+                layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(opcionesComboBox))
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(imagenLabel))
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(checkBox)
+                                .addComponent(commentLabel)
+                                .addComponent(textField)
+                        )
+                        .addComponent(savePanel)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
-}
 }
