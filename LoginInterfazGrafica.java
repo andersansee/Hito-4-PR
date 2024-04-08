@@ -57,3 +57,43 @@ public class LoginInterfazGrafica extends JFrame {
         });
     }
 }
+
+class MiInterfazGrafica extends JFrame {
+
+    public MiInterfazGrafica() {
+        setTitle("Mi Interfaz Gráfica");
+        setSize(400, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        GroupLayout layout = new GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setAutoCreateGaps(true);
+        layout.setAutoCreateContainerGaps(true);
+
+        String[] opciones = {"Sol"};
+        JComboBox<String> opcionesComboBox = new JComboBox<>(opciones);
+        opcionesComboBox.setSelectedIndex(0);
+
+        opcionesComboBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String opcionSeleccionada = (String) opcionesComboBox.getSelectedItem();
+                JOptionPane.showMessageDialog(null, "Seleccionaste: " + opcionSeleccionada);
+            }
+        });
+
+        ImageIcon imagen = new ImageIcon("sol.jpg");
+
+        JLabel imagenLabel = new JLabel();
+        imagenLabel.setIcon(imagen);
+
+        JCheckBox checkBox = new JCheckBox("Click aquí");
+
+        JTextField textField = new JTextField(20);
+
+        JLabel commentLabel = new JLabel("Save your comment");
+
+        JButton saveButton = new JButton("Guardar");
+        saveButton.addActionListener(new ActionListener() {
+    }
+}
+}
